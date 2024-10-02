@@ -126,17 +126,12 @@ export default function App() {
     
     <>
 
-    <button onClick={() => store.enterVR()}>Enter VR</button>
-    <button onClick={() => store.enterAR()}>Enter AR</button>
-    <div>
-      
-    </div>
 
     <div id='canvas-container'>
       <Canvas camera={{ position: [0, 0.5,1.7] }}>
         <XR store={store}>
           {/* <axesHelper args={[10]}/>   */}
-          <gridHelper args={[20]} />
+          {/* <gridHelper args={[20]} /> */}
           {/* <FirstPersonControls /> */}
           <OrbitControls />
           
@@ -144,8 +139,16 @@ export default function App() {
             <Avatar selectedAvatarPath={selectedAvatarPath} animationPath={selectedanimationPath}/>
             <Scroll html>
               <div className='text-white grid grid-cols-2 w-screen h-screen'>
-              <div className=' flex flex-col justify-center items-start lg:items-center max-lg:pl-[60px] py-[20%] gap-[30px] '>
-                  <p>ANIMATION</p>
+              <div className=' flex flex-col  items-start lg:items-center max-lg:pl-[60px] py-[20%] gap-[30px] '>
+                  
+                  <div className=' flex flex-col gap-[20px]'>
+                    <button className='text-white flex items-center justify-center w-full px-4 py-1 text-sm font-bold leading-6 capitalize duration-100 transform border-2 rounded-sm cursor-pointer border-white focus:ring-4 focus:ring-white focus:ring-opacity-50 focus:outline-none sm:w-auto sm:px-6 border-text  hover:shadow-lg hover:-translate-y-1' onClick={() => store.enterVR()}>Enter VR</button>
+                    <button className=' text-white flex items-center justify-center w-full px-4 py-1 text-sm font-bold leading-6 capitalize duration-100 transform border-2 rounded-sm cursor-pointer border-white focus:ring-4 focus:ring-white focus:ring-opacity-50 focus:outline-none sm:w-auto sm:px-6 border-text  hover:shadow-lg hover:-translate-y-1' onClick={() => store.enterAR()}>Enter AR</button>
+
+                    
+                  </div>
+                  
+                  <p className=' text-lg font-bold'>ANIMATION</p>
                   <div className=' flex  flex-col gap-[20px]'>
     
                     <button className='flex items-center justify-center w-full px-4 py-1 text-sm font-bold leading-6 capitalize duration-100 transform border-2 rounded-sm cursor-pointer border-white focus:ring-4 focus:ring-white focus:ring-opacity-50 focus:outline-none sm:w-auto sm:px-6 border-text  hover:shadow-lg hover:-translate-y-1' onClick={()=> handleAnimationSelect(animationPath[1])}>Dancing</button>
