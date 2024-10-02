@@ -144,7 +144,7 @@ export default function App() {
             <Avatar selectedAvatarPath={selectedAvatarPath} animationPath={selectedanimationPath}/>
             <Scroll html>
               <div className='text-white grid grid-cols-2 w-screen h-screen'>
-              <div className=' flex flex-col justify-center items-start pl-[60px] py-[20%] gap-[30px] '>
+              <div className=' flex flex-col justify-center items-start lg:items-center max-lg:pl-[60px] py-[20%] gap-[30px] '>
                   <p>ANIMATION</p>
                   <div className=' flex  flex-col gap-[20px]'>
     
